@@ -11,6 +11,12 @@ $nav_items = [
         'label' => 'Users',
         'icon' => 'ni ni-single-copy-04',
         'color_icon' => 'text-orange-500',
+    ],
+    [
+        'page' => 'nasabah',
+        'label' => 'Nasabah',
+        'icon' => 'ni ni-collection',
+        'color_icon' => 'text-green-500',
     ]
 ];
 
