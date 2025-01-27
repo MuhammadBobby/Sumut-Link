@@ -6,8 +6,6 @@ if (isset($_GET['page']) && $_GET['page'] === 'dashboard') {
     // Default title untuk halaman lainnya
     $title = isset($_GET['page']) ? htmlspecialchars(ucfirst($_GET['page'])) : 'Solusi Aplikasi Pencatatan Transaksi by Bank Sumut';
 }
-
-
 ?>
 
 
@@ -34,16 +32,6 @@ if (isset($_GET['page']) && $_GET['page'] === 'dashboard') {
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
-    <div class="absolute w-full bg-blue-800 min-h-75"></div>
 
-    <?php include 'sidenav.php' ?>
-
-    <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
-
-        <?php include 'navbar.php' ?>
-
-        <!-- start card -->
-        <div class="w-full px-6 py-6 mx-auto">
-
-            <!-- end card to FOOTER -->
+<!-- start body for dashboard pages -->
+<?php include 'start-body.php' ?>
