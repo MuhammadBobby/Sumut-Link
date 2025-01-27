@@ -1,6 +1,6 @@
 <?php
 // Default page
-$page = $_GET['page'] ?? 'dashboard';
+$page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
 
 // Validate the page
 $allowed_pages = ['dashboard', 'users'];

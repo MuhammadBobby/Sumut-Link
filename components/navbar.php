@@ -1,3 +1,7 @@
+<?php
+$active_page = isset($_GET['page']) ? htmlspecialchars(ucfirst($_GET['page'])) : 'dashboard';
+?>
+
 <!-- Navbar -->
 <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="false">
     <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
@@ -7,9 +11,9 @@
                 <li class="text-sm leading-normal">
                     <a class="text-white opacity-50" href="javascript:;">Sumut Link</a>
                 </li>
-                <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page"><?= htmlspecialchars(ucfirst($_GET['page'])) ?></li>
+                <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page"><?= $active_page ?></li>
             </ol>
-            <h6 class="mb-0 font-bold text-white capitalize"><?= htmlspecialchars(ucfirst($_GET['page'])) ?> Page</h6>
+            <h6 class="mb-0 font-bold text-white capitalize"><?= $active_page ?> Page</h6>
         </nav>
 
         <!-- <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">

@@ -15,7 +15,7 @@ $nav_items = [
 ];
 
 // Ambil halaman aktif dari parameter URL
-$current_page = $_GET['page'] ?? '';
+$current_page = $_GET['page'] ?? 'dashboard';
 
 ?>
 
