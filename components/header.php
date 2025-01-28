@@ -30,6 +30,8 @@ if (isset($_GET['page']) && $_GET['page'] === 'dashboard') {
     <link href="./assets/css/argon-dashboard-tailwind.css" rel="stylesheet" />
     <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flowbite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 

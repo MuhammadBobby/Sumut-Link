@@ -27,7 +27,7 @@ $current_page = $_GET['page'] ?? 'dashboard';
 
 
 <!-- sidenav  -->
-<aside class="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl  max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0" aria-expanded="false">
+<aside id="sidenav" class="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl  max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0" aria-expanded="false">
     <div class="h-19">
         <i class="absolute text-white top-0 right-10 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400" sidenav-close></i>
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="index.php?page=dashboard">
@@ -38,7 +38,7 @@ $current_page = $_GET['page'] ?? 'dashboard';
 
     <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent " />
 
-    <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
+    <div class="items-center block w-auto overflow-auto max-h-screen grow basis-full">
 
         <!-- menu -->
         <ul class="flex flex-col pl-0 mb-0">

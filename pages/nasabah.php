@@ -12,14 +12,17 @@ $title = 'Nasabah';
 
 // jenis kelamin styles
 $jenisKelaminStyles = [
-    'laki-laki' => 'from-blue-500 to-cyan-400',  // Warna gradasi untuk Laki-laki
-    'perempuan' => 'from-pink-500 to-red-400',  // Warna gradasi untuk Perempuan
+    'laki-laki' => 'bg-blue-100 text-blue-800 ',  // Warna gradasi untuk Laki-laki
+    'perempuan' => 'bg-red-100 text-red-800 ',  // Warna gradasi untuk Perempuan
 ];
 ?>
 
 <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
+            <!-- Button Add -->
+            <button type="button" data-modal-target="add-nasabah-modal" data-modal-toggle="add-nasabah-modal" class="w-fit text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-6 mt-6 focus:outline-none">Tambah Data</button>
+
             <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent flex justify-between items-center mb-3">
                 <h6 class="text-lg font-semibold text-orange-500">Nasabah <span class="text-blue-800">Table</span></h6>
                 <span class="text-xs text-slate-400"><?= $totalNasabah ?> Nasabah</span>
@@ -64,7 +67,7 @@ $jenisKelaminStyles = [
                                     </td>
                                     <!-- jenis_kelamin -->
                                     <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <span class="bg-gradient-to-tl <?= $jenisKelaminStyles[$nas['jenis_kelamin']] ?> px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white"><?= $nas['jenis_kelamin'] ?></span>
+                                        <span class="<?= $jenisKelaminStyles[$nas['jenis_kelamin']] ?> text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm uppercase"><?= $nas['jenis_kelamin'] ?></span>
                                     </td>
                                     <!-- action -->
                                     <td class="p-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -87,3 +90,6 @@ $jenisKelaminStyles = [
         ?>
     </div>
 </div>
+
+<!-- close conn -->
+<?php $conn->close(); ?>

@@ -12,17 +12,19 @@ $title = 'Test';
 
 // role styles
 $roleStyles = [
-    'cs' => 'from-pink-500 to-red-400',       // Warna gradasi untuk Customer Service
-    'teller' => 'from-blue-500 to-cyan-400',  // Warna gradasi untuk Teller
-    'admin' => 'from-green-500 to-teal-400',  // Warna gradasi untuk Admin
+    'cs' => 'bg-green-100 text-green-800 ',
+    'teller' => 'bg-pink-100 text-pink-800',
+    'admin' => 'bg-blue-100 text-blue-800',
 ];
-
 ?>
 
 <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
-            <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent flex justify-between items-center mb-3">
+            <!-- Button Add -->
+            <button type="button" data-modal-target="add-users-modal" data-modal-toggle="add-users-modal" class="w-fit text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-6 mt-6 focus:outline-none">Tambah Data</button>
+
+            <div class="p-6 border-b-0 border-b-solid rounded-t-2xl border-b-transparent flex justify-between items-center mb-0">
                 <h6 class="text-lg font-semibold text-orange-500">Users <span class="text-blue-800">Table</span></h6>
                 <span class="text-xs text-slate-400"><?= $totalUsers ?> Users</span>
             </div>
@@ -59,7 +61,7 @@ $roleStyles = [
                                     </td>
                                     <!-- role -->
                                     <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <span class="bg-gradient-to-tl <?= $roleStyles[$user['role']] ?> px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white"><?= ucwords(str_replace('_', ' ', strtolower($user['role']))) ?></span>
+                                        <span class="<?= $roleStyles[$user['role']] ?> text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm uppercase"><?= ucwords(str_replace('_', ' ', strtolower($user['role']))) ?></span>
                                     </td>
                                     <!-- created -->
                                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -67,8 +69,8 @@ $roleStyles = [
                                     </td>
                                     <!-- action -->
                                     <td class="p-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400 mx-2"> Edit </a>
-                                        <a href="javascript:;" class="text-xs font-semibold leading-tight text-red-400 mx-2"> Hapus </a>
+                                        <a href="?page=edit_user&id=<?= $user['user_id'] ?>" class="text-xs font-semibold leading-tight text-slate-400 mx-2">Edit</a>
+                                        <a href="./functions/users/delete.php?id=<?= $user['user_id'] ?>" class="text-xs font-semibold leading-tight text-red-400 mx-2" onclick=" return confirm ('Apakah Anda Yakin Ingin Menghapus data Ini ?');">Hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -84,4 +86,15 @@ $roleStyles = [
         include 'components/pagination.php';
         ?>
     </div>
+
+
+    <!-- MODAL -->
+    <?php include 'components/modals/modal-add-users.php'; ?>
 </div>
+
+
+<!-- close conn -->
+<?php $conn->close(); ?>
+
+<!-- JS Custom -->
+<script src="./assets/js/custom/users-page.js"></script>
