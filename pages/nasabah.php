@@ -68,7 +68,7 @@ $jenisKelaminStyles = [
                                     </td>
                                     <!-- action -->
                                     <td class="p-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <a href="javascript:;" class="text-xs font-semibold leading-tight text-orange-400 mx-2"> Detail </a>
+                                        <a href="?page=detail_nasabah&id=<?= $nas['nik_ktp'] ?>" class="text-xs font-semibold leading-tight text-orange-400 mx-2"> Detail </a>
                                         <a href="?page=edit_nasabah&id=<?= $nas['nik_ktp'] ?>" class="text-xs font-semibold leading-tight text-slate-400 mx-2"> Edit </a>
                                         <a href="./functions/nasabah/delete.php?id=<?= $nas['nik_ktp'] ?>" class="text-xs font-semibold leading-tight text-red-400 mx-2" onclick=" return confirm ('Apakah Anda Yakin Ingin Menghapus data Ini ?');">Hapus</a>
                                     </td>

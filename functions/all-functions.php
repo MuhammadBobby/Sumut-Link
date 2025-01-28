@@ -33,7 +33,7 @@ function formatPageName($page)
 
 
 // Generate user id
-function generateUserId($prefix = 'USR', $length = 9)
+function generateId($prefix = 'USR', $length = 9)
 {
     $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     $userId = $prefix; // Awali dengan prefix

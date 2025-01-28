@@ -10,7 +10,7 @@ $verif_password = htmlspecialchars($_POST['password_verif']);
 $jabatan = htmlspecialchars($_POST['jabatan']);
 $role = htmlspecialchars($_POST['role']);
 $created_at = date('Y-m-d H:i:s');
-$user_id = generateUserId();
+$user_id = generateId("USR", 9);
 
 // cek password
 if ($password !== $verif_password) {
