@@ -1,7 +1,4 @@
 <?php
-// import all functions
-require 'functions/all-functions.php';
-
 // Get Data
 include 'functions/connection.php';
 include 'functions/nasabah/getAll.php';
@@ -49,7 +46,7 @@ $jenisKelaminStyles = [
                                                 <div class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" style="background-color: <?php echo sprintf("#%06X", mt_rand(0, 0xFFFFFF)); ?>;"><?= strtoupper($nas['nama_lengkap'][0]) ?></div>
                                             </div>
                                             <div class="flex flex-col justify-center">
-                                                <h6 class="mb-0 text-base leading-normal font-semibold"><?= $nas['nama_lengkap'] ?></h6>
+                                                <h6 class="mb-0 text-base leading-normal font-semibold capitalize"><?= $nas['nama_lengkap'] ?></h6>
                                             </div>
                                         </div>
                                     </td>
@@ -72,8 +69,8 @@ $jenisKelaminStyles = [
                                     <!-- action -->
                                     <td class="p-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <a href="javascript:;" class="text-xs font-semibold leading-tight text-orange-400 mx-2"> Detail </a>
-                                        <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400 mx-2"> Edit </a>
-                                        <a href="javascript:;" class="text-xs font-semibold leading-tight text-red-400 mx-2"> Hapus </a>
+                                        <a href="?page=edit_nasabah&id=<?= $nas['nik_ktp'] ?>" class="text-xs font-semibold leading-tight text-slate-400 mx-2"> Edit </a>
+                                        <a href="./functions/nasabah/delete.php?id=<?= $nas['nik_ktp'] ?>" class="text-xs font-semibold leading-tight text-red-400 mx-2" onclick=" return confirm ('Apakah Anda Yakin Ingin Menghapus data Ini ?');">Hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -89,7 +86,13 @@ $jenisKelaminStyles = [
         include 'components/pagination.php';
         ?>
     </div>
+
+    <!-- MODAL -->
+    <?php include 'components/modals/modal-add-nasabah.php'; ?>
 </div>
 
 <!-- close conn -->
 <?php $conn->close(); ?>
+
+<!-- JS Custom -->
+<script src="./assets/js/custom/nasabah-page.js"></script>

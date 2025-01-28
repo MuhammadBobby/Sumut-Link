@@ -1,5 +1,8 @@
 <?php
-$active_page = isset($_GET['page']) ? htmlspecialchars(ucfirst($_GET['page'])) : 'dashboard';
+// import all functions
+require 'functions/all-functions.php';
+
+$active_page = isset($_GET['page']) ? formatPageName(htmlspecialchars($_GET['page'])) : 'Dashboard';
 ?>
 
 <!-- Navbar -->

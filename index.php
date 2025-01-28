@@ -3,7 +3,7 @@
 $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
 
 // Validate the page
-$allowed_pages = ['dashboard', 'users', 'edit_user',  'nasabah'];
+$allowed_pages = ['dashboard', 'users', 'edit_user',  'nasabah', 'edit_nasabah', 'transaksi'];
 if (!in_array($page, $allowed_pages)) {
     $page = 'dashboard'; // Fallback to default
 }

@@ -17,6 +17,12 @@ $nav_items = [
         'label' => 'Nasabah',
         'icon' => 'ni ni-collection',
         'color_icon' => 'text-green-500',
+    ],
+    [
+        'page' => 'transaksi',
+        'label' => 'Transaksi',
+        'icon' => 'ni ni-credit-card',
+        'color_icon' => 'text-red-500',
     ]
 ];
 

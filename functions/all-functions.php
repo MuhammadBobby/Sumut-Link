@@ -22,6 +22,16 @@ function formatDate($date)
 }
 
 
+// header capitalize
+function formatPageName($page)
+{
+    // Hapus underscore dan ubah menjadi spasi
+    $page = str_replace('_', ' ', $page);
+    // Ubah setiap kata menjadi huruf kapital
+    return ucwords(strtolower($page));
+}
+
+
 // Generate user id
 function generateUserId($prefix = 'USR', $length = 9)
 {
@@ -34,4 +44,11 @@ function generateUserId($prefix = 'USR', $length = 9)
     }
 
     return $userId;
+}
+
+// generate no CIF
+function generateCIF()
+{
+    // Generate 6 digit angka acak
+    return str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
 }
