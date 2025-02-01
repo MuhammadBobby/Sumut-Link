@@ -25,10 +25,32 @@ $active_page = isset($_GET['page']) ? formatPageName(htmlspecialchars($_GET['pag
 
         <!-- Triger sidebar in small screens -->
         <ul class="flex items-center justify-end pl-0 mb-0 list-none">
-            <li>
-                <!-- from GetMe -->
-                <h1 class="text-slate-300 font-semibold tracking-tight max-w-10 truncate"><?= formatPageName($user['username']) ?></h1>
+            <li class="relative">
+                <button id="mega-menu-dropdown-button" data-dropdown-toggle="mega-menu-dropdown" class="flex items-center justify-between w-full py-2 px-3 font-medium text-white md:w-auto hover:bg-transparent md:hover:text-orange-400 md:p-0">
+                    <i class="fas fa-user-circle scale-150"></i>
+                </button>
+                <div id="mega-menu-dropdown" class="absolute z-10 hidden w-auto min-w-52 text-sm bg-white border border-gray-100 rounded-lg shadow-md">
+                    <div class="p-4 pb-0 text-gray-900 md:pb-4 w-full">
+                        <!-- Username from getMe -->
+                        <h1 class="text-slate-800 font-semibold tracking-tight max-w-20 truncate"><?= formatPageName($user['username']) ?></h1>
+
+                        <hr class="h-0.5 my-3 bg-transparent bg-gradient-to-r from-transparent via-black to-transparent">
+
+                        <!-- Jabatan -->
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:text-blue-400 border border-blue-400 capitalize"><?= $user['jabatan'] ?></span>
+
+                        <div>
+                            <p class="mt-2">Role : <span class="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full"><?= $user['role'] ?></span></p>
+                        </div>
+
+                        <!-- Perbarui Password -->
+                        <button type="button" data-modal-target="change-password" data-modal-toggle="change-password" class="block mt-8 w-full h-fit text-orange-400 hover:text-white border border-orange-400 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-xs px-2 py-1 text-center me-2 mb-2">Perbarui Password</button>
+
+                        <p class="text-[10px] text-slate-400 text-center"> Bergabung Sejak <?= formatDate($user['created_at']) ?></p>
+                    </div>
+                </div>
             </li>
+
             <li class="flex items-center pl-4 xl:hidden">
                 <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
                     <div class="w-4.5 overflow-hidden">
@@ -40,5 +62,11 @@ $active_page = isset($_GET['page']) ? formatPageName(htmlspecialchars($_GET['pag
             </li>
         </ul>
     </div>
+
+    <!-- MODAL -->
+    <?php include 'components/modals/modal-change-password.php'; ?>
 </nav>
 <!-- end Navbar -->
+
+<!-- JS Custom -->
+<script src="./assets/js/custom/change-password.js"></script>
