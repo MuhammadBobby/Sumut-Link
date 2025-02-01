@@ -15,6 +15,8 @@ if (isset($_GET['page']) && $_GET['page'] === 'dashboard') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/img/logos/bank_sumut.png" />
+
     <title>Sumut Link - <?= $title ?></title>
 
     <!--     Fonts and icons     -->

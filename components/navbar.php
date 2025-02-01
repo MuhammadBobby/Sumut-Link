@@ -1,7 +1,4 @@
 <?php
-// import all functions
-require 'functions/all-functions.php';
-
 $active_page = isset($_GET['page']) ? formatPageName(htmlspecialchars($_GET['page'])) : 'Dashboard';
 ?>
 
@@ -27,7 +24,11 @@ $active_page = isset($_GET['page']) ? formatPageName(htmlspecialchars($_GET['pag
         </div> -->
 
         <!-- Triger sidebar in small screens -->
-        <ul>
+        <ul class="flex items-center justify-end pl-0 mb-0 list-none">
+            <li>
+                <!-- from GetMe -->
+                <h1 class="text-slate-300 font-semibold tracking-tight max-w-10 truncate"><?= formatPageName($user['username']) ?></h1>
+            </li>
             <li class="flex items-center pl-4 xl:hidden">
                 <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
                     <div class="w-4.5 overflow-hidden">

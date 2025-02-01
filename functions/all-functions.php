@@ -52,3 +52,20 @@ function generateCIF()
     // Generate 6 digit angka acak
     return str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
 }
+
+
+
+// get Me by id
+function getMe($id)
+{
+    include 'functions/connection.php';
+    $query = "SELECT * FROM users WHERE user_id = '$id'";
+    $result = $conn->query($query);
+
+    $user = [];
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+    }
+
+    return $user;
+}

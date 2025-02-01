@@ -68,6 +68,14 @@ $current_page = $_GET['page'] ?? 'dashboard';
                     </a>
                 </li>
             <?php endforeach; ?>
+
+            <!-- logout -->
+            <li class="mt-2.5 px-3">
+                <a href="functions/auth/logout.php" target="_blank" class="inline-block w-full px-8 py-2 mb-4 text-xs font-bold leading-normal text-center text-white capitalize transition-all ease-in rounded-lg shadow-md bg-orange-600 bg-150 hover:shadow-xs hover:-translate-y-px flex justify-center items-center" onclick="return confirm('Apakah Anda yakin ingin keluar?')">
+                    <i class="ni ni-key-25 me-2"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>
