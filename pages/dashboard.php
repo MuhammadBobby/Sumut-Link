@@ -1,33 +1,37 @@
 <?php
+// fun dashboard
+require 'functions/dashboard-data.php';
 // connection
 include 'functions/connection.php';
 
-// get all transaksi
+// get all any
 include 'functions/transaksi/getAll.php';
+include 'functions/nasabah/getAll.php';
+
+// get data from function
+$jumlahTransaksi = getJumlahTransaksi();
+$totalDebit = getTotalTransaksiDebit();
+$totalKredit = getTotalTransaksiKredit();
 ?>
 
 <!-- cards -->
 <div>
     <!-- row 1 -->
     <div class="flex flex-wrap -mx-3">
-        <!-- card1 -->
+        <!-- Total Nasabah -->
         <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
             <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
                     <div class="flex flex-row -mx-3">
                         <div class="flex-none w-2/3 max-w-full px-3">
                             <div>
-                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase">Today's Money</p>
-                                <h5 class="mb-2 font-bold">$53,000</h5>
-                                <p class="mb-0">
-                                    <span class="text-sm font-bold leading-normal text-emerald-500">+55%</span>
-                                    since yesterday
-                                </p>
+                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase">Total Nasabah By System</p>
+                                <h5 class="mb-2 font-bold"><?= number_format($totalNasabah) ?> Nasabah</h5>
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
                             <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
-                                <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
+                                <i class="fas fa-user leading-none text-orange-500 text-lg relative top-3.5"></i>
                             </div>
                         </div>
                     </div>
@@ -35,24 +39,20 @@ include 'functions/transaksi/getAll.php';
             </div>
         </div>
 
-        <!-- card2 -->
+        <!-- jumlah transaksi -->
         <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
             <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
                     <div class="flex flex-row -mx-3">
                         <div class="flex-none w-2/3 max-w-full px-3">
                             <div>
-                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase">Today's Users</p>
-                                <h5 class="mb-2 font-bold">2,300</h5>
-                                <p class="mb-0">
-                                    <span class="text-sm font-bold leading-normal text-emerald-500">+3%</span>
-                                    since last week
-                                </p>
+                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase">Jmlh Transaksi (1 hari)</p>
+                                <h5 class="mb-2 font-bold"><?= number_format($jumlahTransaksi) ?> Transaksi</h5>
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
                             <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-red-600 to-orange-600">
-                                <i class="ni leading-none ni-world text-lg relative top-3.5 text-white"></i>
+                                <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-blue-800"></i>
                             </div>
                         </div>
                     </div>
@@ -60,24 +60,20 @@ include 'functions/transaksi/getAll.php';
             </div>
         </div>
 
-        <!-- card3 -->
+        <!-- Total transaksi debit (1 hari) -->
         <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
             <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
                     <div class="flex flex-row -mx-3">
                         <div class="flex-none w-2/3 max-w-full px-3">
                             <div>
-                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase">New Clients</p>
-                                <h5 class="mb-2 font-bold">+3,462</h5>
-                                <p class="mb-0">
-                                    <span class="text-sm font-bold leading-normal text-red-600">-2%</span>
-                                    since last quarter
-                                </p>
+                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase">Total Transaksi Debit (1 hari)</p>
+                                <h5 class="mb-2 font-bold">Rp <?= number_format($totalDebit) ?></h5>
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
                             <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-emerald-500 to-teal-400">
-                                <i class="ni leading-none ni-paper-diploma text-lg relative top-3.5 text-white"></i>
+                                <i class="fas fa-arrow-down leading-none text-lg relative top-3.5 text-emerald-500"></i>
                             </div>
                         </div>
                     </div>
@@ -85,24 +81,20 @@ include 'functions/transaksi/getAll.php';
             </div>
         </div>
 
-        <!-- card4 -->
+        <!-- total transaksi kredit (1 hari) -->
         <div class="w-full max-w-full px-3 sm:w-1/2 sm:flex-none xl:w-1/4">
             <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
                     <div class="flex flex-row -mx-3">
                         <div class="flex-none w-2/3 max-w-full px-3">
                             <div>
-                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase">Sales</p>
-                                <h5 class="mb-2 font-bold">$103,430</h5>
-                                <p class="mb-0">
-                                    <span class="text-sm font-bold leading-normal text-emerald-500">+5%</span>
-                                    than last month
-                                </p>
+                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase">Total Transaksi Kredit (1 hari)</p>
+                                <h5 class="mb-2 font-bold">Rp <?= number_format($totalKredit) ?></h5>
                             </div>
                         </div>
                         <div class="px-3 text-right basis-1/3">
                             <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-orange-500 to-yellow-500">
-                                <i class="ni leading-none ni-cart text-lg relative top-3.5 text-white"></i>
+                                <i class="fas fa-arrow-up leading-none text-lg relative top-3.5 text-red-500"></i>
                             </div>
                         </div>
                     </div>
