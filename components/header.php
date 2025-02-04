@@ -34,6 +34,8 @@ if (isset($_GET['page']) && $_GET['page'] === 'dashboard') {
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- flowbite -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- fontawesome icon -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 </head>
 
 

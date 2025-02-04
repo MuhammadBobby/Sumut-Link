@@ -31,7 +31,12 @@ $totalKredit = getTotalTransaksiKredit();
                         </div>
                         <div class="px-3 text-right basis-1/3">
                             <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
-                                <i class="fas fa-user leading-none text-orange-500 text-lg relative top-3.5"></i>
+                                <div class="leading-none text-orange-500 text-lg relative top-3.5">
+                                    <svg class="w-7 h-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd" />
+                                    </svg>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,7 +78,11 @@ $totalKredit = getTotalTransaksiKredit();
                         </div>
                         <div class="px-3 text-right basis-1/3">
                             <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-emerald-500 to-teal-400">
-                                <i class="fas fa-arrow-down leading-none text-lg relative top-3.5 text-emerald-500"></i>
+                                <div class="leading-none text-lg relative top-3.5 text-emerald-500">
+                                    <svg class="w-7 h-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -94,7 +103,12 @@ $totalKredit = getTotalTransaksiKredit();
                         </div>
                         <div class="px-3 text-right basis-1/3">
                             <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-orange-500 to-yellow-500">
-                                <i class="fas fa-arrow-up leading-none text-lg relative top-3.5 text-red-500"></i>
+                                <div class="leading-none text-lg relative top-3.5 text-red-500">
+                                    <svg class="w-7 h-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4" />
+                                    </svg>
+
+                                </div>
                             </div>
                         </div>
                     </div>

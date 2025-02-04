@@ -17,8 +17,12 @@ $jenisTrxStyles = [
 <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
-            <!-- Button Add -->
-            <button type="button" data-modal-target="add-transaksi-modal" data-modal-toggle="add-transaksi-modal" class="w-fit text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-6 mt-6 focus:outline-none">Masukkan Transaksi</button>
+            <div>
+                <!-- Button Add -->
+                <button type="button" data-modal-target="add-transaksi-modal" data-modal-toggle="add-transaksi-modal" class="w-fit text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ms-6 me-2 mt-6 focus:outline-none">Masukkan Transaksi</button>
+                <!-- Button report -->
+                <button type="button" data-modal-target="transaksi-report-modal" data-modal-toggle="transaksi-report-modal" class="w-fit text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 ms-2 me-2 mt-6 focus:outline-none">Export Laporan</button>
+            </div>
 
             <div class="p-6 border-b-0 border-b-solid rounded-t-2xl border-b-transparent flex justify-between items-center mb-0">
                 <h6 class="text-lg font-semibold text-orange-500">Transaksi <span class="text-blue-800">Table</span></h6>
@@ -80,8 +84,11 @@ $jenisTrxStyles = [
     </div>
 
 
-    <!-- MODAL -->
-    <?php include 'components/modals/modal-add-transaksi.php'; ?>
+    <!-- MODAL-->
+    <?php
+    include 'components/modals/modal-add-transaksi.php';
+    include 'components/modals/modal-report-transaksi.php';
+    ?>
 </div>
 
 
