@@ -17,8 +17,12 @@ $jenisKelaminStyles = [
 <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
-            <!-- Button Add -->
-            <button type="button" data-modal-target="add-nasabah-modal" data-modal-toggle="add-nasabah-modal" class="w-fit text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-6 mt-6 focus:outline-none">Tambah Data</button>
+            <div>
+                <!-- Button Add -->
+                <button type="button" data-modal-target="add-nasabah-modal" data-modal-toggle="add-nasabah-modal" class="w-fit text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ms-6 me-2 mt-6 focus:outline-none">Tambah Data</button>
+                <!-- Button report -->
+                <button type="button" data-modal-target="nasabah-report-modal" data-modal-toggle="nasabah-report-modal" class="w-fit text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 ms-2 me-2 mt-6 focus:outline-none">Export Laporan</button>
+            </div>
 
             <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent flex justify-between items-center mb-3">
                 <h6 class="text-lg font-semibold text-orange-500">Nasabah <span class="text-blue-800">Table</span></h6>
@@ -89,6 +93,7 @@ $jenisKelaminStyles = [
 
     <!-- MODAL -->
     <?php include 'components/modals/modal-add-nasabah.php'; ?>
+    <?php include 'components/modals/modal-report-nasabah.php'; ?>
 </div>
 
 <!-- close conn -->
