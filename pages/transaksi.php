@@ -4,7 +4,7 @@ include 'functions/connection.php';
 include 'functions/transaksi/getAll.php';
 
 // header table
-$header_table = ['Nama Nasabah', 'Jenis Transaksi', 'Jumlah', 'Keterangan', 'Action'];
+$header_table = ['Nama Nasabah', 'Jenis Transaksi', 'Jumlah', 'Keterangan', 'Tanggal', 'Action'];
 $title = 'Transaksi';
 
 // jenis kelamin styles
@@ -62,6 +62,10 @@ $jenisTrxStyles = [
                                     <!-- Keterangan -->
                                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <span class="text-xs font-semibold leading-tight text-slate-400"><?= $trx['keterangan'] ?></span>
+                                    </td>
+                                    <!-- tanggal -->
+                                    <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <span class="text-xs font-semibold leading-tight text-slate-400"><?= formatDate($trx['tgl_transaksi']) ?></span>
                                     </td>
                                     <!-- action -->
                                     <td class="p-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">

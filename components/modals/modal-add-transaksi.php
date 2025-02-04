@@ -25,7 +25,7 @@ include 'functions/nasabah/getAll.php';
             <form class="p-4 md:p-5" action="functions/transaksi/add.php" method="POST">
                 <input type="hidden" name="created_by" id="created_by" value="USRnjeVm1LjT">
                 <div class="grid gap-4 mb-4 grid-cols-2">
-                    <!-- username -->
+                    <!-- nasabah -->
                     <div class="col-span-2">
                         <label for="nasabah_id" class="block mb-2 text-sm font-medium text-gray-900">Nasabah</label>
                         <select id="nasabah_id" name="nasabah_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 max-h-32 overflow-y-auto">
