@@ -19,6 +19,6 @@ if ($result) {
     header('Location: ../../index.php?page=transaksi&update=true');
     exit;
 } else {
-    header('Location: ../../index.php?page=transaksi&error=update_failed');
+    header('Location: ../../index.php?page=transaksi&update=false');
     exit;
 }

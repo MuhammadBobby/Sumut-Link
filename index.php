@@ -26,6 +26,8 @@ if (!in_array($page, $allowed_pages)) {
 // Include header
 include 'components/header.php';
 
+include 'components/alerts.php';
+
 // Include the requested page
 include "pages/{$page}.php";
 

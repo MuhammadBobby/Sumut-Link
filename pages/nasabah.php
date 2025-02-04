@@ -17,6 +17,14 @@ $jenisKelaminStyles = [
 <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
+            <!-- <div class="relative flex flex-wrap items-stretch justify-sel w-fit transition-all rounded-lg ease lg:me-2">
+                <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
+                    <svg class="w-auto h-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                    </svg>
+                </span>
+                <input type="text" id="search" class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Cari nasabah..." />
+            </div> -->
             <div>
                 <!-- Button Add -->
                 <button type="button" data-modal-target="add-nasabah-modal" data-modal-toggle="add-nasabah-modal" class="w-fit text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ms-6 me-2 mt-6 focus:outline-none">Tambah Data</button>
@@ -40,7 +48,7 @@ $jenisKelaminStyles = [
                             </tr>
                         </thead>
                         <!-- BODY -->
-                        <tbody>
+                        <tbody id="nasabah-table">
                             <?php foreach ($nasabah as $nas) : ?>
                                 <tr>
                                     <!-- nama -->
@@ -96,8 +104,29 @@ $jenisKelaminStyles = [
     <?php include 'components/modals/modal-report-nasabah.php'; ?>
 </div>
 
-<!-- close conn -->
-<?php $conn->close(); ?>
+
+
+<script>
+    $(document).ready(function() {
+        $("#search").on("keyup", function() {
+            let keyword = $(this).val(); // Ambil input pencarian
+            console.log(keyword);
+
+            $.ajax({
+                url: "functions/nasabah/search.php", // File PHP untuk mengambil data
+                method: "POST",
+                data: {
+                    search: keyword
+                },
+                success: function(response) {
+                    $("#nasabah-table").html(response); // Update tabel dengan hasil pencarian
+                },
+            });
+        });
+    });
+</script>
 
 <!-- JS Custom -->
 <script src="./assets/js/custom/nasabah-page.js"></script>
+<!-- close conn -->
+<?php $conn->close(); ?>

@@ -16,15 +16,19 @@ $active_page = isset($_GET['page']) ? formatPageName(htmlspecialchars($_GET['pag
             <h6 class="mb-0 font-bold text-white capitalize"><?= $active_page ?> Page</h6>
         </nav>
 
-        <!-- <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
-            <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
-                <i class="fas fa-search"></i>
-            </span>
-            <input type="text" class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Type here..." />
-        </div> -->
 
         <!-- Triger sidebar in small screens -->
         <ul class="flex items-center justify-end pl-0 mb-0 list-none">
+            <?php if ($page == 'nasabah') : ?>
+                <li class="relative flex flex-wrap items-stretch w-fit transition-all rounded-lg ease lg:me-2">
+                    <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
+                        <svg class="w-auto h-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </span>
+                    <input type="text" id="search" class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Cari nasabah..." />
+                </li>
+            <?php endif; ?>
             <!-- user  button -->
             <li class="relative">
                 <button id="mega-menu-dropdown-button" data-dropdown-toggle="mega-menu-dropdown" class="flex items-center justify-between w-full py-2 px-3 font-medium text-white md:w-auto hover:bg-transparent md:hover:text-orange-400 md:p-0">
