@@ -126,45 +126,54 @@ $totalKredit = getTotalTransaksiKredit();
                         <h6 class="mb-2">Transaksi Terbaru</h6>
                     </div>
                 </div>
-                <div class="overflow-x-auto">
-                    <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 ">
-                        <tbody>
-                            <?php foreach ($transaksi as $trx) : ?>
-                                <tr>
-                                    <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap ">
-                                        <div class="flex items-center px-2 py-1">
-                                            <div>
-                                                <div class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" style="background-color: <?php echo sprintf("#%06X", mt_rand(0, 0xFFFFFF)); ?>;"><?= strtoupper($trx['nama_lengkap'][0]) ?></div>
+
+                <?php if (!empty($transaksi)) : ?>
+                    <div class="overflow-x-auto">
+                        <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 ">
+                            <tbody>
+                                <?php foreach ($transaksi as $trx) : ?>
+                                    <tr>
+                                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap ">
+                                            <div class="flex items-center px-2 py-1">
+                                                <div>
+                                                    <div class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" style="background-color: <?php echo sprintf("#%06X", mt_rand(0, 0xFFFFFF)); ?>;"><?= strtoupper($trx['nama_lengkap'][0]) ?></div>
+                                                </div>
+                                                <div class="ml-6">
+                                                    <p class="mb-0 text-xs font-semibold leading-tight">Nasabah:</p>
+                                                    <h6 class="mb-0 text-sm leading-normal"><?= $trx['nama_lengkap'] ?></h6>
+                                                </div>
                                             </div>
-                                            <div class="ml-6">
-                                                <p class="mb-0 text-xs font-semibold leading-tight">Nasabah:</p>
-                                                <h6 class="mb-0 text-sm leading-normal"><?= $trx['nama_lengkap'] ?></h6>
+                                        </td>
+                                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap ">
+                                            <div class="text-center">
+                                                <p class="mb-0 text-xs font-semibold leading-tight">Jenis Trx:</p>
+                                                <h6 class="mb-0 text-sm leading-normal capitalize <?= $trx['jenis_transaksi'] === 'kredit' ? 'text-red-500' : 'text-emerald-500' ?>"><?= $trx['jenis_transaksi'] ?></h6>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap ">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">Jenis Trx:</p>
-                                            <h6 class="mb-0 text-sm leading-normal capitalize <?= $trx['jenis_transaksi'] === 'kredit' ? 'text-red-500' : 'text-emerald-500' ?>"><?= $trx['jenis_transaksi'] ?></h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap ">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">Jumlah:</p>
-                                            <h6 class="mb-0 text-sm leading-normal">Rp <?= number_format($trx['jumlah']) ?></h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap ">
-                                        <div class="flex-1 text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">Tanggal:</p>
-                                            <h6 class="mb-0 text-sm leading-normal"><?= formatDate($trx['tgl_transaksi']) ?></h6>
-                                        </div>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
+                                        </td>
+                                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap ">
+                                            <div class="text-center">
+                                                <p class="mb-0 text-xs font-semibold leading-tight">Jumlah:</p>
+                                                <h6 class="mb-0 text-sm leading-normal">Rp <?= number_format($trx['jumlah']) ?></h6>
+                                            </div>
+                                        </td>
+                                        <td class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap ">
+                                            <div class="flex-1 text-center">
+                                                <p class="mb-0 text-xs font-semibold leading-tight">Tanggal:</p>
+                                                <h6 class="mb-0 text-sm leading-normal"><?= formatDate($trx['tgl_transaksi']) ?></h6>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php else : ?>
+                    <div class="flex items-center justify-center h-full">
+                        <div class="text-center">
+                            <p class="mb-0 text-sm font-semibold leading-tight">Belum ada transaksi</p>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

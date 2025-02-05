@@ -34,9 +34,14 @@ if (isset($_SESSION['access_token']) || !empty($_SESSION['access_token'])) {
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- flowbite -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
+
+    <?php include 'components/alerts.php' ?>
+
     <main class="mt-0 transition-all duration-200 ease-in-out">
         <section>
             <div class="relative flex items-center min-h-screen p-0 overflow-hidden bg-center bg-cover">

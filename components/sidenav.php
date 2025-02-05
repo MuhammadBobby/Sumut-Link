@@ -29,6 +29,19 @@ $nav_items = [
 // Ambil halaman aktif dari parameter URL
 $current_page = $_GET['page'] ?? 'dashboard';
 
+// Filter menu berdasarkan role user
+$filtered_nav = array_filter($nav_items, function ($item) use ($user) {
+    if ($user['role'] === 'admin') {
+        return true; // Admin bisa melihat semua menu
+    }
+    if ($user['role'] === 'teller') {
+        return in_array($item['page'], ['dashboard', 'transaksi']);
+    }
+    if ($user['role'] === 'cs') {
+        return in_array($item['page'], ['dashboard', 'nasabah']);
+    }
+    return false;
+});
 ?>
 
 
@@ -47,7 +60,7 @@ $current_page = $_GET['page'] ?? 'dashboard';
 
         <!-- menu -->
         <ul class="flex flex-col pl-0 mb-0">
-            <?php foreach ($nav_items as $item):
+            <?php foreach ($filtered_nav as $item):
                 // Cek apakah halaman saat ini aktif
                 $is_active = ($current_page === $item['page']);
             ?>
