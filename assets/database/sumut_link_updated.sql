@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Server version:               8.0.30 - MySQL Community Server - GPL
 -- Server OS:                    Win64
--- HeidiSQL Version:             12.1.0.6537
+-- HeidiSQL Version:             12.6.0.6765
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -50,7 +50,7 @@ INSERT INTO `nasabah` (`nik_ktp`, `no_CIF`, `nama_lengkap`, `alamat`, `no_telepo
 -- Dumping structure for table sumut_link.transaksi
 CREATE TABLE IF NOT EXISTS `transaksi` (
   `transaksi_id` varchar(12) NOT NULL,
-  `created_by` varchar(12) NOT NULL,
+  `created_by` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nasabah_id` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `jenis_transaksi` enum('debit','kredit') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `jumlah` bigint NOT NULL DEFAULT (0),
@@ -58,10 +58,14 @@ CREATE TABLE IF NOT EXISTS `transaksi` (
   `keterangan` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`transaksi_id`),
   KEY `FK_transaksi_nasabah` (`nasabah_id`),
-  KEY `FK_transaksi_users` (`created_by`)
+  KEY `FK_transaksi_users` (`created_by`),
+  CONSTRAINT `FK_transaksi_nasabah` FOREIGN KEY (`nasabah_id`) REFERENCES `nasabah` (`nik_ktp`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_transaksi_users` FOREIGN KEY (`created_by`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table sumut_link.transaksi: ~0 rows (approximately)
+INSERT INTO `transaksi` (`transaksi_id`, `created_by`, `nasabah_id`, `jenis_transaksi`, `jumlah`, `tgl_transaksi`, `keterangan`) VALUES
+	('TRXC1exMrQUX', 'USRGAOanZLXl', '1234567898765431', 'debit', 1000000, '2025-02-05', 'test');
 
 -- Dumping structure for table sumut_link.users
 CREATE TABLE IF NOT EXISTS `users` (
