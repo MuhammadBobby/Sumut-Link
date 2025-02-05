@@ -12,6 +12,7 @@ $jenisTrxStyles = [
     'debit' => 'bg-green-100 text-green-800 ',  // Warna gradasi untuk Laki-laki
     'kredit' => 'bg-red-100 text-red-800 ',  // Warna gradasi untuk Perempuan
 ];
+
 ?>
 
 <div class="flex flex-wrap -mx-3">

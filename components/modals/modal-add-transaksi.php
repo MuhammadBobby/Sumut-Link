@@ -23,7 +23,7 @@ include 'functions/nasabah/getAll.php';
             </div>
             <!-- Modal body -->
             <form class="p-4 md:p-5" action="functions/transaksi/add.php" method="POST">
-                <input type="hidden" name="created_by" id="created_by" value="USRnjeVm1LjT">
+                <input type="hidden" name="created_by" id="created_by" value=<?= $user['user_id'] ?>>
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <!-- nasabah -->
                     <div class="col-span-2">

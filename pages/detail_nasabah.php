@@ -70,7 +70,7 @@ include 'functions/nasabah/getById.php';
                     </div>
                 </div>
                 <div class="flex justify-end gap-3">
-                    <a href="../../index.php?page=nasabah" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 h-fit">Close</a>
+                    <a href="../index.php?page=nasabah" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 h-fit">Close</a>
                 </div>
             </form>
         </div>
