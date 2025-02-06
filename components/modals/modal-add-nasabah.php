@@ -36,7 +36,7 @@
                     <!-- Nama Ibu Kandung-->
                     <div class="col-span-2 relative">
                         <label for="nama_ibu_kandung" class="block mb-2 text-sm font-medium text-gray-900">Nama Ibu Kandung</label>
-                        <input type="text" name="nama_ibu_kandung" id="nama_ibu_kandung" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" minlength="8" placeholder="********" required="">
+                        <input type="text" name="nama_ibu_kandung" id="nama_ibu_kandung" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="********" required="">
                     </div>
                     <!-- no telp -->
                     <div class="col-span-2 sm:col-span-1">

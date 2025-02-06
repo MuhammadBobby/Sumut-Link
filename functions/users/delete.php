@@ -12,12 +12,12 @@ if (empty($id)) {
 }
 
 // check apakah id digunakan di table lain (transaksi)
-$query = "SELECT * FROM transaksi WHERE created_by = '$id'";
-$result = $conn->query($query);
-if ($result->num_rows > 0) {
-    header('Location: ../../index.php?page=users&error=id_used');
-    exit;
-}
+// $query = "SELECT * FROM transaksi WHERE created_by = '$id'";
+// $result = $conn->query($query);
+// if ($result->num_rows > 0) {
+//     header('Location: ../../index.php?page=users&error=id_used');
+//     exit;
+// }
 
 
 // query

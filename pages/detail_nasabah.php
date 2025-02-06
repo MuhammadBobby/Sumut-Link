@@ -7,7 +7,7 @@ $id = htmlspecialchars($_GET['id']);
 
 // check id
 if (empty($id)) {
-    header('Location: ../../index.php?page=users&error=id_not_found');
+    header('Location: ../index.php?page=users&error=id_not_found');
     exit;
 }
 

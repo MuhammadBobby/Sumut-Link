@@ -113,6 +113,15 @@
             footer: 'Silahkan coba lagi dengan username yang benar.'
         })
     </script>
+<?php elseif (isset($_GET['error']) && $_GET['error'] === "nik_ktp_used") : ?>
+    <script>
+        swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'NIK KTP sudah terdaftar!',
+            footer: 'Silahkan gunakan NIK KTP lain.'
+        })
+    </script>
 <?php elseif (isset($_GET['error']) && $_GET['error'] === "incorect_password") : ?>
     <script>
         swal.fire({

@@ -19,7 +19,7 @@ function getTotalTransaksiDebit()
     // connection
     include 'connection.php';
 
-    $query_debit = "SELECT COUNT(jumlah) as jumlah_debit FROM transaksi WHERE jenis_transaksi = 'debit' AND DATE(tgl_transaksi) = CURDATE()";
+    $query_debit = "SELECT SUM(jumlah) as jumlah_debit FROM transaksi WHERE jenis_transaksi = 'debit' AND DATE(tgl_transaksi) = CURDATE()";
     $result_debit = $conn->query($query_debit);
     $row_debit = $result_debit->fetch_assoc();
     return $row_debit['jumlah_debit'] ?? 0;
@@ -32,7 +32,7 @@ function getTotalTransaksiKredit()
     // connection
     include 'connection.php';
 
-    $query_kredit = "SELECT COUNT(jumlah) as jumlah_kredit FROM transaksi WHERE jenis_transaksi = 'kredit' AND DATE(tgl_transaksi) = CURDATE()";
+    $query_kredit = "SELECT SUM(jumlah) as jumlah_kredit FROM transaksi WHERE jenis_transaksi = 'kredit' AND DATE(tgl_transaksi) = CURDATE()";
     $result_kredit = $conn->query($query_kredit);
     $row_kredit = $result_kredit->fetch_assoc();
     return $row_kredit['jumlah_kredit'] ?? 0;
